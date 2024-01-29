@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 version: 0.2
 phases:
   install:
@@ -18,11 +19,4 @@ phases:
     commands:
       - echo PostBuild Phase
       - aws s3 sync ./build s3://testingernestbucket
-      # - aws cloudfront create-invalidation --distribution-id E713H8OBS9MWP --paths "/*"; 
-      
 
-# artifacts:
-#   files:
-#     - '/*'
-#   discard-path: no
-#   base-directory: build
