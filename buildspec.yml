@@ -1,10 +1,4 @@
 version: 0.2
-env:
-  variables:
-    S3_ENVIRONMENT_BUCKET: "periodapp-env"
-    Project: "frontend"
-    Service: "service"
-    ENVIRONMENT_FILE: "period-app-env"
 phases:
   install:
     commands:
@@ -17,14 +11,13 @@ phases:
       - npm install
   build:
     commands:
-      - aws s3 cp s3://${S3_ENVIRONMENT_BUCKET}/${Project}/${Service}/${ENVIRONMENT_FILE} .env
       - echo Build Phase
       - npm run build
 
   post_build:
     commands:
       - echo PostBuild Phase
-      - aws s3 sync ./build s3://periodapp
+      - aws s3 sync ./build s3://testingernestbucket
       # - aws cloudfront create-invalidation --distribution-id E713H8OBS9MWP --paths "/*"; 
       
 
