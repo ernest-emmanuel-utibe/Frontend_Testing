@@ -37,11 +37,12 @@ phases:
       - echo Build Phase
       - npm run build
 
-  post_build:
-    commands:
-      - echo PostBuild Phase
-      - aws configure set default.region Global  # Set AWS region explicitly
-      - aws s3 sync ./build s3://testingernestbucket
+post_build:
+  commands:
+    - echo PostBuild Phase
+    - aws configure set default.region us-east-1  # Replace with actual bucket location
+    - aws s3 sync ./build s3://testingernestbucket
+
       
       
 
