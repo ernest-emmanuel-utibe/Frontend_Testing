@@ -16,5 +16,5 @@ phases:
   post_build:
     commands:
       - echo PostBuild Phase
-      - aws configure set default.region US East (Ohio) us-east-2  # Replace with actual bucket location
-      - aws s3 sync ./build s3://ernesttestingbucket
+      - aws configure region US East (Ohio) us-east-2  # Replace with actual bucket location
+      - aws s3 sync ./build s3://ernestbucket121
