@@ -17,7 +17,7 @@ phases:
   post_build:
     commands:
       - echo PostBuild Phase
-      - aws s3 sync ./build s3://Frontend_Testing
+      - aws s3 sync ./build s3://testingernestbucket
       # - aws cloudfront create-invalidation --distribution-id E713H8OBS9MWP --paths "/*"; 
       
 
