@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 version: 0.2
 phases:
   install:
@@ -18,5 +17,6 @@ phases:
   post_build:
     commands:
       - echo PostBuild Phase
+      - aws configure set default.region us-east-1  # Replace with actual bucket location
       - aws s3 sync ./build s3://testingernestbucket
 
