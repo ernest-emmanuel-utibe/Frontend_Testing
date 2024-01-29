@@ -5,17 +5,20 @@ phases:
       - npm i -g npm@8.5.1
       - pip install --upgrade pip
       - pip install --upgrade awscli
+      
   pre_build:
     commands:
       - echo Pre_build Phase
       - npm install
+
   build:
     commands:
       - echo Build Phase
       - npm run build
 
-post_build:
-  commands:
-    - echo PostBuild Phase
-    - aws configure set default.region us-east-1  # Replace with actual bucket location
-    - aws s3 sync ./build s3://testingernestbucket
+  post_build:
+    commands:
+      - echo PostBuild Phase
+      - aws configure set default.region us-east-1  # Replace with actual bucket location
+      - aws s3 sync ./build s3://testingernestbucket
+
