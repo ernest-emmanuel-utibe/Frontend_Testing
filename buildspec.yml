@@ -16,17 +16,5 @@ phases:
   post_build:
     commands:
       - echo PostBuild Phase
-      - aws configure set default.region us-east-1  # Replace with actual bucket location
+      # - aws configure set default.region us-east-1  # Replace with actual bucket location
       - aws s3 sync ./build s3://testingernestbucket
-    
-      # - aws cloudfront create-invalidation --distribution-id E713H8OBS9MWP --paths "/*";
-   
- 
-      
-
-# artifacts:
-#   files:
-#     - '/*'
-#   discard-path: no
-#   base-directory: build      
-
